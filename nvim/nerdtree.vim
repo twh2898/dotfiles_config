@@ -1,4 +1,3 @@
-
 let g:NERDTreeShowHidden=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeIgnore=[]
@@ -9,4 +8,3 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Toggle
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
-
