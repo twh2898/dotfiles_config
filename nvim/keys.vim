@@ -55,11 +55,14 @@ cnoremap w! w !sudo tee > /dev/null %
 noremap <C-left> :bprev<CR>
 noremap <C-right> :bnext<CR>
 
-command! Rewrap normal {v}gq
-
 " Re-wrap paragraph
+command! Rewrap normal {v}gq
 noremap <A-q> :Rewrap<CR>
 noremap <C-k><C-q> :Rewrap<CR>
+" Enable Alt-q key for Vim
+if !exists("*stdpath")
+    execute "set <M-q>=\eq"
+end
 
 " Map :W to :w
 command! W w
