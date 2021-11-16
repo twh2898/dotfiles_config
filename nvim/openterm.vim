@@ -1,4 +1,3 @@
-
 " Turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
 " Start terminal in insert mode
@@ -14,4 +13,3 @@ function! OpenVTerminal()
     vsplit term://bash
 endfunction
 nnoremap <C-k><C-n> : call OpenVTerminal()<CR>
-
