@@ -2,8 +2,6 @@
 " ~/.config/nvim/init.vim
 "
 
-set number
-
 call plug#begin('~/.vim/plugged')
     " Plugin Section
 
@@ -42,13 +40,17 @@ for dep in s:deps
     call util#Requires(s:cwd, dep)
 endfor
 
+" A buffer is hidden when it is abandoned instead of being unloaded
 set hidden
 
+" Don't keep a backup of a file before writing
 set nobackup
 set nowritebackup
 
+" Write the swap file to disk after nothing is types for this number of ms
 set updatetime=300
 
+" Don't give ins-completion-menu messages
 set shortmess+=c
 
 " Enable Mouse
@@ -86,7 +88,7 @@ autocmd FileType cpp setlocal spell
 autocmd FileType cmake setlocal spell
 autocmd FileType python setlocal spell
 
-" Persistent  undo
+" Persistent undo
 if has('persistent_undo')
     set undofile
     set undodir=$HOME/.vim/undo
@@ -94,4 +96,3 @@ endif
 
 " Yank to system clipboard
 set clipboard=unnamedplus
-
