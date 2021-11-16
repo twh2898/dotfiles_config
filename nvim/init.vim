@@ -2,44 +2,6 @@
 " ~/.config/nvim/init.vim
 "
 
-call plug#begin('~/.vim/plugged')
-    " Plugin Section
-
-    " Themes
-    Plug 'rakr/vim-one'
-
-    " NERDTree
-    Plug 'scrooloose/nerdtree'
-    Plug 'ryanoasis/vim-devicons'
-
-    " Toml
-    Plug 'cespare/vim-toml'
-
-    " Lua
-    Plug 'twh2898/vim-lua'
-call plug#end()
-
-" neovim uses stdpath('config') while vim uses ~/.vim
-if exists("*stdpath")
-    let s:cwd = stdpath('config')
-else
-    let s:cwd = '~/.vim'
-endif
-let s:deps = [
-            \'colors',
-            \'keys',
-            \'macro',
-            \'openterm',
-            \'nerdtree',
-            \'format',
-            \'lua',
-            \'python',
-            \]
-
-for dep in s:deps
-    call util#Requires(s:cwd, dep)
-endfor
-
 " A buffer is hidden when it is abandoned instead of being unloaded
 set hidden
 
@@ -96,3 +58,41 @@ endif
 
 " Yank to system clipboard
 set clipboard=unnamedplus
+
+call plug#begin('~/.vim/plugged')
+    " Plugin Section
+
+    " Themes
+    Plug 'rakr/vim-one'
+
+    " NERDTree
+    Plug 'scrooloose/nerdtree'
+    Plug 'ryanoasis/vim-devicons'
+
+    " Toml
+    Plug 'cespare/vim-toml'
+
+    " Lua
+    Plug 'twh2898/vim-lua'
+call plug#end()
+
+" neovim uses stdpath('config') while vim uses ~/.vim
+if exists("*stdpath")
+    let s:cwd = stdpath('config')
+else
+    let s:cwd = '~/.vim'
+endif
+let s:deps = [
+            \'colors',
+            \'keys',
+            \'macro',
+            \'openterm',
+            \'nerdtree',
+            \'format',
+            \'lua',
+            \'python',
+            \]
+
+for dep in s:deps
+    call util#Requires(s:cwd, dep)
+endfor
