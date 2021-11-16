@@ -73,64 +73,17 @@ command! Q q
 " Toggle wrap with ,w
 nnoremap <leader>w :set wrap!<CR>
 
-command! RemoveWhitespace :%s/\s\+$//e
-
 " Remove trailing whitespace
+command! RemoveWhitespace :%s/\s\+$//e
 nnoremap <leader>sw :RemoveWhitespace<CR>
 nnoremap <C-k><C-s> :RemoveWhitespace<CR>
 
-
-command! GenBuild exec "![ -f build ] && ./build || ./%"
-command! GenRun exec "![ -f run ] && ./run || ./%"
-command! GenBuildRun exec "![ -f build ] && ./build || [ -f run ] && ./run || ./%"
-
 " Generic build and run scripts
+command! GenBuild exec "![ -f build ] && ./build || ./%"
 nnoremap <C-k>b :wa <CR> :GenBuild<CR>
+
+command! GenRun exec "![ -f run ] && ./run || ./%"
 nnoremap <C-k><C-b> :wa<CR> :GenBuild<CR>
+
+command! GenBuildRun exec "![ -f build ] && ./build || [ -f run ] && ./run || ./%"
 nnoremap <F5> :wa<CR> :GenBuildRun<CR>
-
-" Auto close
-
-"function! AutoClose(close)
-"    let l:next = strcharpart(getline('.')[col('.'):], 0, 1)
-"    if l:next == a:close
-"        exec "normal! la"
-"    else
-"        exec "normal! a".a:close
-"    endif
-"endfunction
-"
-"inoremap "<ESC> "
-"inoremap " ""<left>
-"inoremap '<ESC> '
-"inoremap ' ''<left>
-"inoremap (<Esc> (
-"inoremap ( ()<left>
-"inoremap ) <ESC>:call AutoClose(")")<CR>a
-"inoremap () ()
-"inoremap [<Esc> [
-"inoremap [ []<left>
-"inoremap ] <ESC>:call AutoClose("]")<CR>a
-"inoremap [] []
-"inoremap {<Esc> {
-"inoremap { {}<left>
-"inoremap } <ESC>:call AutoClose("}")<CR>a
-"inoremap {} {}
-"inoremap {<CR> {<CR>}<ESC>O
-"inoremap {;<CR> {<CR>};<ESC>O
-
-"inoremap "<ESC> "
-"inoremap " <ESC>:call AutoClose( "\"")<CR>a
-"inoremap '<ESC> '
-"inoremap ' <ESC>:call AutoClose("'")<CR>a
-"inoremap (<Esc> (
-"inoremap ( ()<left>
-"inoremap ) <ESC>:call AutoClose(")")<CR>a
-"inoremap [<Esc> [
-"inoremap [ []<left>
-"inoremap ] <ESC>:call AutoClose("]")<CR>a
-"inoremap {<Esc> {
-"inoremap { {}<left>
-"inoremap } <ESC>:call AutoClose("}")<CR>a
-"inoremap {<CR> {<CR>}<ESC>O
-"inoremap {;<CR> {<CR>};<ESC>O
