@@ -10,27 +10,34 @@ function! ShiftLineUp()
         normal ddkP
     endif
 endfunction
+nnoremap <C-up> :call ShiftLineUp()<CR>
 
 function! ShiftLineDown()
     normal ddp
 endfunction
-
 nnoremap <C-down> :call ShiftLineDown()<CR>
-nnoremap <C-up> :call ShiftLineUp()<CR>
 
 " Smart Home
 inoremap <Home> <Esc>^i
 nnoremap <Home> ^
 
+" Enable Alt panel navigation for Vim
+if !exists("*stdpath")
+    execute "set <M-h>=\eh"
+    execute "set <M-j>=\ej"
+    execute "set <M-k>=\ek"
+    execute "set <M-l>=\el"
+end
+
 " use alt+hjkl to move between split/vsplit panels
-tnoremap <A-h> <C-\><C-n><C-w>h
-tnoremap <A-j> <C-\><C-n><C-w>j
-tnoremap <A-k> <C-\><C-n><C-w>k
-tnoremap <A-l> <C-\><C-n><C-w>l
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
+tnoremap <M-h> <C-\><C-n><C-w>h
+tnoremap <M-j> <C-\><C-n><C-w>j
+tnoremap <M-k> <C-\><C-n><C-w>k
+tnoremap <M-l> <C-\><C-n><C-w>l
+nnoremap <M-h> <C-w>h
+nnoremap <M-j> <C-w>j
+nnoremap <M-k> <C-w>k
+nnoremap <M-l> <C-w>l
 
 " Open new split / vsplit
 nnoremap <leader>n :split<CR>
