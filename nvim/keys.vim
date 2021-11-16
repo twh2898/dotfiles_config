@@ -67,6 +67,9 @@ end
 " Map :W to :w
 command! W w
 
+" Map :Q to :q
+command! Q q
+
 " Toggle wrap with ,w
 nnoremap <leader>w :set wrap!<CR>
 
