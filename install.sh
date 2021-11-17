@@ -13,7 +13,7 @@ while [ $# -gt 0 ]; do
 done
 
 if [ ! -z "$FORCE" ]; then
-    echo "Forcing install"
+    echo "Forcing install. This will only override links. Files and directories will be left untouched."
 fi
 
 make_link() {
