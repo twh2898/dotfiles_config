@@ -53,7 +53,7 @@ link_config() {
 }
 
 link_home() {
-    SOURCE=$CONFIG/$1
+    SOURCE=$CONFIG/home/$1
     if [ -z "$2" ]; then
         DEST=$HOME/.$1
     else
@@ -64,7 +64,7 @@ link_home() {
 }
 
 copy_home() {
-    SOURCE=$CONFIG/$1
+    SOURCE=$CONFIG/home/$1
     if [ -z "$2" ]; then
         DEST=$HOME/.$1
     else
