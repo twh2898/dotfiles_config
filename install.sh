@@ -109,5 +109,4 @@ test_link_config() {
 # test_link_config
 
 link_config nvim
-link_config Code/User
 link_home bashrc
