@@ -1,0 +1,30 @@
+[include]
+    path=~/.gitconfig_user
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
+    commit = true
+
+[credential]
+    helper = cache
+
+[push]
+    default = simple
+    followTags = true
+
+[core]
+    pager = less -F
+
+[merge "ours"]
+    driver = true
+
+[pull]
+    rebase = false
+
+[init]
+    defaultBranch = master

@@ -63,6 +63,22 @@ link_home() {
     make_link $SOURCE $DEST
 }
 
+copy_home() {
+    SOURCE=$CONFIG/$1
+    if [ -z "$2" ]; then
+        DEST=$HOME/.$1
+    else
+        DEST=$2
+    fi
+
+    if [ ! -e "$DEST" ]; then
+        echo "Copying: $SOURCE to $DEST"
+        cp -r $SOURCE $DEST
+    else
+        echo "$DEST already exists, skipping"
+    fi
+}
+
 test_link_config() {
     test() {
         EXPECT=$3
@@ -110,3 +126,5 @@ test_link_config() {
 
 link_config nvim
 link_home bashrc
+link_home gitconfig
+copy_home gitconfig_user
