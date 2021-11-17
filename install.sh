@@ -131,3 +131,4 @@ copy_home gitconfig_user
 link_home clang-format
 link_home inputrc
 link_home tmux.conf
+link_home templates
