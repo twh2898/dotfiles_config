@@ -1,0 +1,52 @@
+# ~/.bash_aliases
+
+# Pretty ls
+alias ls='ls -h --group-directories-first '
+
+# ls shorthand
+alias ll='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+
+# Clear and ls shorthand
+alias cls='clear && ls'
+alias cll='clear && ll'
+alias cla='clear && la'
+alias clla='clear && lla'
+
+# Human readable df and du
+alias df='df -h'
+alias du='du -h'
+
+# Less use raw control characters (allow color)
+alias less='less -r'
+
+# gcc and g++ color output
+alias gcc='gcc -fdiagnostics-color=always'
+alias g++='g++ -fdiagnostics-color=always'
+
+# Systemd shorthand
+alias ss='sudo systemctl'
+alias userctl='systemctl --user'
+
+# Python 3
+alias py='python3'
+
+# Apt shorthand
+alias sa='sudo apt'
+
+# Git shorthand
+alias gl='git log --oneline --graph --decorate --branches'
+alias gla='gl --all'
+alias gs='git status'
+alias gd='git diff'
+alias gds='gd --staged'
+alias ga='git add'
+alias gc='git commit'
+alias gcm='gc -m'
+alias c='gc -am'
+alias ca='ga . && gcm'
+
+# Notes Server
+alias edit_notes='code $NOTES'
+alias restart_notes='userctl restart notes.service'

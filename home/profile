@@ -1,0 +1,18 @@
+# ~/.profile
+
+# If running bash, include ~/.bashrc
+[ -n "$BASH_VERSION" ] && [ -f "$HOME/.bashrc" ] && . $HOME/.bashrc
+
+# Add user private bin to PATH if it exists
+[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
+[ -d "$HOME/.bin" ] && PATH="$HOME/.bin:$PATH"
+[ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
+
+# SSH Auth
+[[ ! -f "$XDG_RUNTIME_DIR/ssh-agent.env" ]] && ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
+[[ ! "$SSH_AUTH_SOCK" ]] && eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
+
+# User environment variables
+export EDITOR=nvim
+export NOTES=$HOME/Documents/Notes
+export MKN_TEMPLATES=$HOME/.templates
