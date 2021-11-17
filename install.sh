@@ -129,3 +129,4 @@ link_home bashrc
 link_home gitconfig
 copy_home gitconfig_user
 link_home clang-format
+link_home inputrc
